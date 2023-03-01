@@ -16,47 +16,14 @@ All can be installed via [Homebrew](https://brew.sh/) on macOS or Linux
 
 ## Steps
 
-1. Start Colima and LocalStack:
+1. Make sure Docker (or Colima) is running
+1. Start LocalStack:
 
    ```bash
-   $ colima start
    $ localstack start
    ```
 
-1. Create a new Terraform root module with the following base configuration:
-
-   ```hcl
-   terraform {
-     required_providers {
-       aws = {
-         source  = "hashicorp/aws"
-         version = "~> 4.0"
-       }
-       archive = {
-         source = "hashicorp/archive"
-         version = "~> 2.0"
-       }
-     }
-   }
-
-   provider "aws" {
-
-     access_key                  = "test"
-     secret_key                  = "test"
-     region                      = "us-east-1"
-
-     skip_credentials_validation = true
-     skip_metadata_api_check     = true
-     skip_requesting_account_id  = true
-
-     endpoints {
-       lambda = "http://localhost:4566"
-       iam    = "http://localhost:4566"
-     }
-   }
-   ```
-
-1. Initialize your Terraform module
+1. Initialize a Terraform root module in this directory
 1. Add resources:
    - A [Lambda function](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_function) that runs the Python code contained in the `lambda/` directory
    - A [Lambda function URL](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_function_url) for the function

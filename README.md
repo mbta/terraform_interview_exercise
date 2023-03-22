@@ -23,7 +23,8 @@ All can be installed via [Homebrew](https://brew.sh/) on macOS or Linux
    $ localstack start
    ```
 
-1. Initialize a Terraform root module in this directory
+1. Clone this repo to a local working directory
+1. Initialize a Terraform root module within the repo directory
 1. Add resources:
    - A [Lambda function](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_function) that runs the Python code contained in the `lambda/` directory
    - A [Lambda function URL](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_function_url) for the function

@@ -2,7 +2,7 @@
 
 ## Objective
 
-Use Terraform and LocalStack to configure a Lambda function and function URL.
+Use Terraform and LocalStack to configure a Lambda function and function URL. LocalStack acts as a stand-in for AWS, there's no need an AWS account or access keys. The initial configuration in main.tf configures Terraform to make calls to the LocalStack container.
 
 ## Prerequisites
 

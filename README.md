@@ -14,6 +14,8 @@ All can be installed via [Homebrew](https://brew.sh/) on macOS or Linux
 - [Localstack](https://docs.localstack.cloud/getting-started/installation/): `brew install localstack`
 - [Terraform](https://developer.hashicorp.com/terraform/downloads): `brew install terraform`
 
+Note that the LocalStack Python package must be installed on your host machine &ndash; running only the LocalStack Docker container is not sufficient to complete this exercise. 
+
 ## Steps
 
 1. Make sure Docker (or Colima) is running
